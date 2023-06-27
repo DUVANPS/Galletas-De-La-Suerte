@@ -6,13 +6,10 @@ import { useState, useEffect } from 'react';
 function App() {
   const images = [
     "https://galleta-de-la-fortuna574aae.netlify.app/imagenes/fondo1.jpg",
-    "./src/components/img/fondo2.png",
-    "./src/components/img/fondo3.png",
-    "./src/components/img/fondo4.png",
-    "./src/components/img/fondo5.jpg",
-    "./src/components/img/fondo6.jpg",
-    "./src/components/img/fondo7.jpg",
-    "./src/components/img/fondo8.jpg",
+    "https://galleta-de-la-fortuna574aae.netlify.app/imagenes/fondo2.jpg",
+    "	https://galleta-de-la-fortuna574aae.netlify.app/imagenes/fondo3.jpg",
+    "https://galleta-de-la-fortuna574aae.netlify.app/imagenes/fondo4.jpg",
+ 
   ];
 
   const [index, setIndex] = useState(0);
