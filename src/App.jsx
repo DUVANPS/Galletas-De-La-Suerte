@@ -1,4 +1,3 @@
-
 import './App.css';
 import UserCard from './components/UserCard';
 import tarjet from './data/tarjet.json';
@@ -9,7 +8,11 @@ function App() {
     "./src/components/img/fondo1.png",
     "./src/components/img/fondo2.png",
     "./src/components/img/fondo3.png",
-    "./src/components/img/fondo4.png"
+    "./src/components/img/fondo4.png",
+    "./src/components/img/fondo5.jpg",
+    "./src/components/img/fondo6.jpg",
+    "./src/components/img/fondo7.jpg",
+    "./src/components/img/fondo8.jpg",
   ];
 
   const [index, setIndex] = useState(0);
@@ -17,24 +20,26 @@ function App() {
   useEffect(() => {
     const body = document.body;
     body.style.backgroundImage = `url(${images[index]})`;
-
-    const changeBackground = () => {
-      setIndex((prevIndex) => (prevIndex + 10) % images.length);
-    };
-
-    body.addEventListener("click", changeBackground);
-
-    return () => {
-      body.removeEventListener("click", changeBackground);
-    };
   }, [index, images]);
+
+  const changeBackground = () => {
+  setIndex((prevIndex) => {
+  let newIndex = prevIndex;
+  while (newIndex === prevIndex) {
+  newIndex = Math.floor(Math.random() * images.length);
+      }
+  return newIndex;
+    });
+  };
 
   return (
     <>
       <UserCard data={tarjet[index]} />
-      <button onClick={() => setIndex((prevIndex) => (prevIndex + 1) + images.length)}>
-        tyujtu<i className='bx bx-shuffle'></i>
-      </button>
+      <div className='trasladar'>
+        <button className="caja" onClick={changeBackground}>
+          <i className='bx bxs-tree'></i>Prueba Tu Suerte<i className='bx bxs-tree'></i>
+        </button>
+      </div>
     </>
   );
 }

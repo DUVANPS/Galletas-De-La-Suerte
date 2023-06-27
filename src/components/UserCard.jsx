@@ -3,19 +3,28 @@ const UserCard = ( { data } ) => {
     //const {data} = props
 
     return(
-        <article className="article">
-            <h1>{data.phrase} </h1>
-           
+        <article className="container">
+        <div className="org">
+        <div className="heartbeat" >
+        <h1  >Galletas de la fortuna</h1>
+        </div>
+        </div>   
             
-            <div className="user-information">
-                <p>{data.phrase}  </p>
+            <div className="frase">
+            <p className="frass">{data.phrase}  </p>
+            <div>
+               
+             </div>
+             
+             </div>
+             <br />
 
-                <div>
-                <p>{data.author}</p>
-               </div>
-
-               </div>
+             <div className="autor">
             
+             <p>{data.author}</p>
+             </div>
+
+
         </article>
     )
 }
