@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const images = [
-    "./src/components/img/fondo1.png",
+    "https://galleta-de-la-fortuna574aae.netlify.app/imagenes/fondo1.jpg",
     "./src/components/img/fondo2.png",
     "./src/components/img/fondo3.png",
     "./src/components/img/fondo4.png",
