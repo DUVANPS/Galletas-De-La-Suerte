@@ -1,7 +1,7 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import UserCard from './components/UserCard';
 import tarjet from './data/tarjet.json';
-import { useState, useEffect } from 'react';
 
 function App() {
   const images = [
@@ -23,13 +23,8 @@ function App() {
   }, [index, images]);
 
   const changeBackground = () => {
-  setIndex((prevIndex) => {
-  let newIndex = prevIndex;
-  while (newIndex === prevIndex) {
-  newIndex = Math.floor(Math.random() * images.length);
-      }
-  return newIndex;
-    });
+    const newIndex = Math.floor(Math.random() * images.length);
+    setIndex(newIndex);
   };
 
   return (
