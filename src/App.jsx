@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import './App.css';
 import UserCard from './components/UserCard';
 import tarjet from './data/tarjet.json';
+import { useState } from 'react';
 
 function App() {
   const images = [
@@ -14,24 +14,23 @@ function App() {
     "./src/components/img/fondo7.jpg",
     "./src/components/img/fondo8.jpg",
   ];
-
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const body = document.body;
-    body.style.backgroundImage = `url(${images[index]})`;
-  }, [index, images]);
-
-  const changeBackground = () => {
-    const newIndex = Math.floor(Math.random() * images.length);
-    setIndex(newIndex);
+  const changeUser = () => {
+    if (index < users.length - 1) {
+      setIndex(index + 1);
+    } else {
+      setIndex(0);
+    }
   };
+
+  document.body.style = `backgroundImage: ${images[index]}`;
 
   return (
     <>
-      <UserCard data={tarjet[index]} />
+      <UserCard data={tarjet[index]}  />
       <div className='trasladar'>
-        <button className="caja" onClick={changeBackground}>
+        <button className="caja" onClick={changeUser}>
           <i className='bx bxs-tree'></i>Prueba Tu Suerte<i className='bx bxs-tree'></i>
         </button>
       </div>
