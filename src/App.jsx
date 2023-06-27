@@ -1,44 +1,42 @@
 
-import './App.css'
-
-import UserCard from './components/UserCard'
-
-import users from './data/users.json'
-
-import { useState } from 'react'
-
+import './App.css';
+import UserCard from './components/UserCard';
+import tarjet from './data/tarjet.json';
+import { useState, useEffect } from 'react';
 
 function App() {
-  const colors = ["#FDB137", "#785964", "#6D6875", "#B5838D", "#E5989B", "#7E9680", "#C73866", "#FFB4A2", "#79616F", "#EAB595" ]
+  const images = [
+    "./src/components/img/fondo1.png",
+    "./src/components/img/fondo2.png",
+    "./src/components/img/fondo3.png",
+    "./src/components/img/fondo4.png"
+  ];
 
+  const [index, setIndex] = useState(0);
 
-  const [ index, setIndex] = useState(0)
+  useEffect(() => {
+    const body = document.body;
+    body.style.backgroundImage = `url(${images[index]})`;
 
-  const changeUser = () => {
-    if(index < users.length - 2 ){
-    setIndex(index + 1)
-  }else{
-    setIndex(0)
-  }
+    const changeBackground = () => {
+      setIndex((prevIndex) => (prevIndex + 10) % images.length);
+    };
 
-  }
+    body.addEventListener("click", changeBackground);
 
-  document.body.style = `background-color: ${ colors[index ]}`
+    return () => {
+      body.removeEventListener("click", changeBackground);
+    };
+  }, [index, images]);
 
   return (
     <>
-
-    <UserCard
-    data={ users[index]}
-
-    />
-    <button onClick={changeUser}><i className='bx bx-shuffle'></i>
-      
-    </button>
-    
-   
+      <UserCard data={tarjet[index]} />
+      <button onClick={() => setIndex((prevIndex) => (prevIndex + 1) + images.length)}>
+        tyujtu<i className='bx bx-shuffle'></i>
+      </button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
