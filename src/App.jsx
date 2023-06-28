@@ -9,6 +9,10 @@ function App() {
     "https://galleta-de-la-fortuna574aae.netlify.app/imagenes/fondo2.jpg",
     "	https://galleta-de-la-fortuna574aae.netlify.app/imagenes/fondo3.jpg",
     "https://galleta-de-la-fortuna574aae.netlify.app/imagenes/fondo4.jpg",
+    "https://fortuune-cookiee.netlify.app/fondo1.jpg",
+    "https://fortuune-cookiee.netlify.app/fondo2.jpg",
+    "https://fortuune-cookiee.netlify.app/fondo3.jpg",
+    "https://fortuune-cookiee.netlify.app/fondo4.jpg",
  
   ];
 
