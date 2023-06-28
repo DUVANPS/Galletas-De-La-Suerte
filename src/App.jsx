@@ -23,7 +23,7 @@ function App() {
   setIndex((prevIndex) => {
   let newIndex = prevIndex;
   while (newIndex === prevIndex) {
-  newIndex = Math.floor(Math.random() * images.length);
+  newIndex = Math.floor(Math.random() % images.length);
       }
   return newIndex;
     });
