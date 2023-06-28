@@ -161,7 +161,7 @@
     width: 50%;
 }
 }
-@media screen and (max-width: 800px){
+@media screen and (max-width: 600px){
   .h1 {
     font-size: 12;
   }
